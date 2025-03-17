@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phelan Footwear System</title>
+<link rel="stylesheet" href="style-main.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="user-status-bar">
+    <div class="user-info" id="userInfo">Logged in as <span id="username">User</span></div>
+    <div class="logout"><a href="#" id="logoutLink">Logout</a></div>
+</div>
+<header>
+<div class="logo-container">
+<img src="logo.png" alt="Phelan Footwear Logo">
+</div>
+<div class="system-title">
+<span class="summer">SUMMER</span>
+<span class="factory">FACTORY</span>
+</div>
+</header>
+<div class="container">
+    <aside class="sidebar">
+        <h2>Admin Interface</h2>
+        <ul>
+            <li><a href="#">Front desk/POS</a></li>
+            <li><a href="#">Factory production management</a></li>
+            <li><a href="#">Warehouse and shipping</a></li>
+        </ul>
+    </aside>
+    <main class="dashboard">
+        <section class="group sales-orders">
+            <h2>Add/Edit Sales Order</h2>
+            <button id="add-edit-sales-order-button" class="modern-button-add-edit">Add/Edit Sales Order</button>
+            <h2>Orders</h2>
+            <button class="modern-button">Orders Outstanding</button>
+            <button class="modern-button">Orders Completed</button>
+            <button class="modern-button">Orders Cancelled</button>
+            <div class="reports">
+                <h2>Reports</h2>
+                <button class="modern-button">Factory</button>
+            </div>
+        </section>
+        <section class="group add-edit">
+            <h2 class="center-heading">Add/Edit</h2>
+            <button class="modern-button primary">Customer</button>
+            <button class="modern-button primary">Agent</button>
+            <button class="modern-button primary">Company</button>
+            <button class="modern-button primary">Suppliers</button>
+            <button class="modern-button primary">Displays</button>
+        </section>
+        <section class="group add-edit-columns">
+            <h2 class="center-heading">Add/Edit</h2>
+            <button class="modern-button secondary">Column1</button>
+            <button class="modern-button secondary">Column2</button>
+            <button class="modern-button secondary">Column3</button>
+            <button class="modern-button secondary">Column4</button>
+            <button class="modern-button secondary">Column5</button>
+            <button class="modern-button secondary">Product</button>
+            <button class="modern-button secondary">Colour</button>
+            <button class="modern-button secondary">Create Brochure</button>
+            <button class="modern-button secondary">Create Price List</button>
+        </section>
+        <section class="group orders-section">
+            <h2>Orders</h2>
+            <button class="modern-button success">Place Orders</button>
+            <button class="modern-button success">Receive Orders</button>
+            <button class="modern-button success">Orders Out/Std</button>
+            <button class="modern-button success">List Suppl.Orders</button>
+        </section>
+        <section class="group stock">
+            <h2>Stock</h2>
+            <button class="modern-button info">Manual Count</button>
+            <button class="modern-button info">Stock Scene</button>
+            <button class="modern-button info">Show/Del SOH</button>
+        </section>
+    </main>
+</div>
+<footer>
+    <p>© 2025 Phelan Footwear</p>
+</footer>
+
+<script src="script-main.js"></script>
+</body>
+</html>

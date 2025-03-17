@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add/Edit Sales Order - Summer</title>
+<link rel="stylesheet" href="style-add-edit-sales-order.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="user-status-bar">
+    <div class="user-info" id="userInfo">Logged in as <span id="username">User</span></div>
+    <div class="logout"><a href="#" id="logoutLink">Logout</a></div>
+</div>
+<header>
+<h1>Sales Order - Summer</h1>
+<div class="form-actions">
+<button class="button delete-button">Delete</button>
+<button id="back-to-main-button" class="button back-to-main-button">Back to Main</button>
+</div>
+</header>
+<main class="sales-order-form">
+    <section class="left-section">
+        <div class="top-identifiers">
+            <div class="identifier-group">
+                <label for="soid">SOID</label>
+                <button class="identifier-button soid-button"></button>
+            </div>
+            <div class="identifier-group">
+                <label for="customer">Customer</label>
+                <button class="identifier-button customer-button"></button>
+            </div>
+            <div class="identifier-group">
+                <label for="code">CODE</label>
+                <button class="identifier-button code-button"></button>
+            </div>
+            <div class="identifier-group">
+                <label for="col2">COL2</label>
+                <button class="identifier-button col2-button"></button>
+            </div>
+            <div class="record-count">
+                Count: <span id="entry-count">0</span>
+            </div>
+        </div>
+        <div class="entry-list-container">
+            <ul id="entry-list">
+                <!-- Entries from entries.txt will be populated here -->
+            </ul>
+        </div>
+        <div class="open-order-info">
+            <p>Double click in field to open Order</p>
+        </div>
+    </section>
+
+    <section class="right-section">
+        <section class="customer-details">
+            <div class="input-group">
+                <label for="customer-name">Customer:</label>
+                <div class="input-with-button">
+                    <input type="text" id="customer-name">
+                    <button class="icon-button">+</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <textarea id="address"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="agent">Agent:</label>
+                <div class="input-with-button">
+                    <input type="text" id="agent">
+                    <button class="icon-button">+</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="order-id">Order ID:</label>
+                <div class="input-with-label">
+                    <input type="text" id="order-id">
+                    <button class="icon-button">+</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="requested-month">Requested month:</label>
+                <select id="requested-month">
+                    <option value=""></option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="order-date">Order Date:</label>
+                <input type="date" id="order-date">
+            </div>
+            <div class="input-group">
+                <label for="manufacture-date">Manufacture Date:</label>
+                <input type="date" id="manufacture-date">
+            </div>
+            <div class="input-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments"></textarea>
+            </div>
+        </section>
+
+        <section class="contact-details">
+            <h2>Contact Details</h2>
+            <div class="input-group">
+                <label for="tel1">Tel1:</label>
+                <input type="tel" id="tel1">
+            </div>
+            <div class="input-group">
+                <label for="tel2">Tel2:</label>
+                <input type="tel" id="tel2">
+            </div>
+            <div class="input-group">
+                <label for="cellphone">CellPhone:</label>
+                <input type="tel" id="cellphone">
+            </div>
+            <div class="input-group">
+                <label for="fax">Fax:</label>
+                <input type="text" id="fax">
+            </div>
+            <div class="input-group">
+                <label for="contact1">Contact1:</label>
+                <input type="text" id="contact1">
+            </div>
+            <div class="input-group">
+                <label for="contact2">Contact2:</label>
+                <input type="text" id="contact2">
+            </div>
+        </section>
+
+        <section class="order-items">
+            <h2>Order Items</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Colour</th>
+                            <th>Size3</th>
+                            <th>Size4</th>
+                            <th>Size5</th>
+                            <th>Size6</th>
+                            <th>Size7</th>
+                            <th>Size8</th>
+                            <th>Size9</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="empty-row">
+                            <td>
+                                <select class="product-select">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="colour-select">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td><input type="number" class="size-input" data-size="3" value="0"></td>
+                            <td><input type="number" class="size-input" data-size="4" value="0"></td>
+                            <td><input type="number" class="size-input" data-size="5" value="0"></td>
+                            <td><input type="number" class="size-input" data-size="6" value="0"></td>
+                            <td><input type="number" class="size-input" data-size="7" value="0"></td>
+                            <td><input type="number" class="size-input" data-size="8" value="0"></td>
+                            <td><input type="number" class="size-input" data-size="9" value="0"></td>
+                            <td class="row-total">0</td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+            <div class="table-actions">
+                <p class="info-text">Double click in Product to create new one</p>
+            </div>
+        </section>
+
+        <section class="form-footer">
+            <div class="cumulative-totals">
+                <label for="cumulative-totals">Cumulative Totals</label>
+                <input type="text" id="cumulative-totals" value="" readonly>
+            </div>
+            <div class="print-preview">
+                <button class="button">Print</button>
+                <button class="button preview-button">Preview Order</button>
+            </div>
+            <div class="qty-total-pairs">
+                <div class="input-group small">
+                    <label for="qty">Qty</label>
+                    <input type="number" id="qty" value="3">
+                </div>
+                <div class="input-group small">
+                    <label for="total-pairs">Total Pairs:</label>
+                    <input type="text" id="total-pairs" value="" readonly>
+                </div>
+            </div>
+            <div class="record-navigation">
+                <button class="button">Previous Record</button>
+                <button class="button add-record-button">Add Record</button>
+                <button class="button">Next Record</button>
+            </div>
+        </section>
+    </section>
+</main>
+
+<script src="script-add-edit-sales-order.js"></script>
+</body>
+</html>

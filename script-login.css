@@ -1,0 +1,60 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Get DOM elements
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    // Valid login credentials
+    const validCredentials = [
+        { username: 'mike', password: 'phelan123' },
+        { username: 'tina', password: 'phelan321' },
+        { username: 'factory', password: 'phelanabc' }
+    ];
+    
+    // Add event listener to login button
+    loginBtn.addEventListener('click', validateLogin);
+    
+    // Add event listener for pressing Enter key in password field
+    passwordInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            validateLogin();
+        }
+    });
+    
+    // Validate login credentials
+    function validateLogin() {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+        
+        // Check if credentials match any valid pair
+        const isValid = validCredentials.some(cred => 
+            cred.username === username && cred.password === password
+        );
+        
+        if (isValid) {
+            // Clear any error message
+            errorMessage.textContent = '';
+            
+            // Redirect to dashboard or home page
+            // For now, we'll just alert a success message
+            alert('Login successful! Redirecting...');
+            
+            // You can add a redirect here, for example:
+            // window.location.href = 'dashboard.html';
+        } else {
+            // Display error message
+            errorMessage.textContent = 'Invalid username or password. Please try again.';
+            
+            // Clear the password field
+            passwordInput.value = '';
+            
+            // Focus on the username field if it's empty, otherwise focus on the password field
+            if (!username) {
+                usernameInput.focus();
+            } else {
+                passwordInput.focus();
+            }
+        }
+    }
+});
