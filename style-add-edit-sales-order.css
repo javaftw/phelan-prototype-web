@@ -11,6 +11,16 @@ min-height: 100vh;
 box-sizing: border-box;
 }
 
+.logo-container {
+display: flex;
+justify-content: center;
+margin-bottom: 15px;
+}
+.logo-container img {
+max-width: 200px; /* Adjust as needed */
+height: auto;
+}
+
 
 /* User Status Bar */
 .user-status-bar {
