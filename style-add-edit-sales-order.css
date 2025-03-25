@@ -80,6 +80,8 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+/* Add margin-top to create space below the status bar */
+margin-top: 50px; /* Adjust as needed */
 }
 
 header h1 {
@@ -98,20 +100,12 @@ font-size: 0.9em;
 transition: background-color 0.3s ease;
 }
 
-.form-actions button.delete-button {
-background-color: #e74c3c;
-color: #fff;
-}
 
 .form-actions button.back-to-main-button {
 background-color: #158aff;
 color: #fff;
 }
 
-.form-actions button.delete-form-button {
-background-color: #3498db;
-color: #fff;
-}
 
 main.sales-order-form {
 width: 95%;
@@ -325,7 +319,7 @@ font-size: 0.8em;
 }
 
 .right-section .contact-details {
-padding: 15px;
+padding: 10px; /* Reduced padding */
 border: 1px solid #eee;
 border-radius: 5px;
 background-color: #e0e0e0;
@@ -333,35 +327,35 @@ margin-bottom: 20px;
 }
 
 .right-section .contact-details h2 {
-font-size: 1.2em;
+font-size: 1.1em; /* Reduced font size */
 margin-top: 0;
-margin-bottom: 10px;
+margin-bottom: 8px; /* Reduced margin */
 border-bottom: 1px solid #ddd;
-padding-bottom: 5px;
+padding-bottom: 3px; /* Reduced padding */
 }
 
 .right-section .contact-details .input-group {
 display: grid;
-grid-template-columns: auto 1fr; 
+grid-template-columns: 1fr 2fr; /* Two columns: label and input */
 align-items: center;
-margin-bottom: 8px;
-gap: 10px; 
+margin-bottom: 6px; /* Reduced margin */
+gap: 8px; /* Reduced gap */
 }
 
 .right-section .contact-details label {
-font-size: 0.9em;
+font-size: 0.85em; /* Reduced font size */
 color: #555;
-text-align: right; 
-padding-right: 5px; 
+text-align: right;
+padding-right: 5px;
 }
 
 .right-section .contact-details input {
-padding: 8px;
+padding: 6px; /* Reduced padding */
 border: 1px solid #ddd;
 border-radius: 4px;
-font-size: 0.9em;
+font-size: 0.85em; /* Reduced font size */
 box-sizing: border-box;
-width: 100%; 
+width: 100%;
 }
 
 .right-section .contact-details h2,
