@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Editor</title>
+  <link rel="stylesheet" href="tickets-style.css">
+  <link rel="stylesheet" href="tickets-popup.css">
+</head>
+<body>
+  <div id="header">
+    <div class="header-left">
+      <h1>Edit Tickets</h1>
+    </div>
+    <div class="header-center">
+      <img src="logo.png" alt="Logo" id="header-logo">
+    </div>
+    <div class="header-right">
+      <button id="global-remove-btn">Remove</button>
+      <button id="global-duplicate-btn">Duplicate</button>
+      <button id="global-new-btn">New</button>
+    </div>
+  </div>
+  <div id="container">
+    <div id="ticket-list"></div>
+  </div>
+  <template id="ticket-template">
+    <div class="ticket-wrapper">
+      <div class="ticket">
+        <div class="code" data-type="code">???-??-??-??</div>
+        <div class="prodname" data-type="prod"># ?</div>
+        <div class="issue">
+          <span>ISS/DTE</span><br><span class="date" data-type="date">#</span>
+        </div>
+        <div class="steps">
+          <div>CLICK UPPER</div><div>CLICK INSOLE</div>
+          <div>TABLE</div><div>TABLE</div><div>MACHINE</div>
+        </div>
+        <div class="size-box" data-type="box">
+          <span class="box-value">#</span>
+        </div>
+        <div class="multiplier">
+          x <span class="count" data-type="count">#</span>
+        </div>
+        <div class="footer">
+          <span class="b">B</span>
+          <span class="month" data-type="month">???</span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script src="tickets-popup.js"></script>
+  <script src="tickets-script.js"></script>
+</body>
+</html>

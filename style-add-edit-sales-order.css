@@ -443,7 +443,7 @@ box-sizing: border-box;
 
 .form-footer .print-preview button.button,
 .form-footer .record-navigation button.button {
-padding: 8px 15px;
+padding: 8px 8px;
 border: none;
 border-radius: 4px;
 cursor: pointer;
@@ -456,6 +456,14 @@ color: #fff;
 .form-footer .print-preview button.button:hover,
 .form-footer .record-navigation button.button:hover {
 background-color: #555;
+}
+
+.form-footer .record-navigation button.add-record-button {
+background-color: #009000;
+}
+
+.form-footer .record-navigation button.del-record-button {
+background-color: #900000;
 }
 
 .form-footer .qty-total-pairs {
@@ -504,8 +512,8 @@ flex-direction: column;
 }
 
 .form-footer .print-preview,
-.form-footer .record-navigation {
-    flex-direction: column;
+.form-footer . -navigation {
+    flex-direction: row;
     align-items: flex-start;
 }
 
