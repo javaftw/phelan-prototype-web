@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labels</title>
+  <link rel="stylesheet" href="labels-style.css">
+</head>
+<body>
+  <div id="header">
+    <div class="header-left">
+      <h1>Labels</h1>
+    </div>
+    <div class="header-center">
+      <img src="logo.png" alt="Logo" id="header-logo">
+    </div>
+    <div class="header-right">
+      <button id="global-back-to-tickets-btn">Back</button>
+      <button id="global-print-labels-btn">Print</button>
+    </div>
+  </div>
+  <div id="container">
+    <div id="labels-list"></div>
+  </div>
+  <template id="label-template">
+    <div class="label-wrapper">
+      <div class="label">
+        <div class="code" data-type="contents">???-??-??-??</div>
+        </div>
+        
+      </div>
+    </div>
+  </template>
+
+  <script src="labels-script.js"></script>
+</body>
+</html>

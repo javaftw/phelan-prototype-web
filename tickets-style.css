@@ -156,6 +156,7 @@ body {
   transition: background 0.3s;
 }
 
+.size-box[data-value="3"] { background: #ffffff; border: 1px solid black; color: #000000;}
 .size-box[data-value="4"] { background: #00bd91; color: #ffffff;}
 .size-box[data-value="5"] { background:#0062ff; color: #ffffff;}
 .size-box[data-value="6"] { background: #d60000; color: #ffffff;}

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('global-remove-btn').addEventListener('click', removeSelectedTicket);
   document.getElementById('global-duplicate-btn').addEventListener('click', duplicateSelectedTicket);
   document.getElementById('global-new-btn').addEventListener('click', addTicket);
+  document.getElementById('global-labels-btn').addEventListener('click', showLabels);
 });
 
 fetch('data.json')
@@ -14,6 +15,27 @@ fetch('data.json')
     data = json;
     addTicket();
   });
+
+function showLabels() {
+  const labelsData = [];
+
+  document.querySelectorAll('.ticket-wrapper').forEach(wrapper => {
+    const code = wrapper.querySelector('[data-type="code"]').innerText;
+    const prodname = wrapper.querySelector('[data-type="prod"]').innerText;
+    const date = wrapper.querySelector('[data-type="date"]').innerText;
+    const size = wrapper.querySelector('.box-value').innerText;
+    const count = parseInt(wrapper.querySelector('[data-type="count"]').innerText);
+
+    // Push 'count' number of labels
+    for (let i = 0; i < count; i++) {
+      labelsData.push({ code, prodname, date, size });
+    }
+  });
+
+  sessionStorage.setItem('labelsData', JSON.stringify(labelsData));
+  window.location.href = 'labels.html';
+}
+
 
 function addTicket() {
   const template = document.getElementById('ticket-template');
@@ -122,9 +144,9 @@ function applyData(wrapper, entry) {
 }
 
 function showBoxPopup(wrapper) {
-  const value = prompt('Enter a number from 4 to 9');
+  const value = prompt('Enter a number from 3 to 9');
   const num = parseInt(value);
-  if (num >= 4 && num <= 9) {
+  if (num >= 3 && num <= 9) {
     const box = wrapper.querySelector('.size-box');
     box.setAttribute('data-value', num);
     box.querySelector('.box-value').innerText = num;
