@@ -5,90 +5,9 @@ body {
   background: #a0a0a0;
 }
 
-#header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  z-index: 1000;
-  box-sizing: border-box;
-}
-
-.header-left {
-  flex: 1;
-}
-
-.header-left h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.header-center {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-#header-logo {
-  max-height: 40px;
-}
-
-.header-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-#global-remove-btn {
-  background-color: #d00000;
-}
-#global-remove-btn:hover {
-  background-color: #ff0000;
-  color: #ffffff;
-}
-
-#global-duplicate-btn {
-  background-color: #f0d0d0;
-}
-#global-duplicate-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#global-new-btn {
-  background-color: #f0d0d0;
-}
-#global-new-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#global-print-tickets-btn {
-  background-color: #f0d0d0;
-}
-#global-print-tickets-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#global-labels-btn {
-  background-color: #f0d0d0;
-}
-#global-labels-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
 #container {
-  margin-top: 50px; /* Provides space below the fixed header */
-  padding: 10px;
+  margin-top: 0px; /* Provides space below the fixed header */
+  padding: 0px;
   height: calc(100vh - 70px);
   overflow-y: auto;
   box-sizing: border-box;
@@ -97,25 +16,20 @@ body {
 #ticket-list {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0px;
   width: 100%;
   margin: 0 auto;
-  background: #f9f9f9;
-  padding: 10px;
+  background: #fff;
+  padding: 0px;
   box-sizing: border-box;
 }
 
 .ticket-wrapper {
   display: flex;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   position: relative;
   transition: all 0.2s ease;
-}
-
-.selected-ticket {
-  outline: 3px solid #4090FF;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .ticket {
@@ -123,7 +37,8 @@ body {
   width: 100%;
   aspect-ratio: 5.5 / 1;
   background: white;
-  border: 2px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   box-sizing: border-box;
   font-family: sans-serif;
 }
@@ -134,10 +49,6 @@ body {
   transition: all 0.2s ease;
 }
 
-.ticket [data-type]:hover {
-  background-color: #4090FF;
-  color: #FFFFFF;
-}
 
 [data-type="code"] {
   top: 0%;
@@ -196,7 +107,7 @@ body {
 }
 
 .size-box[data-value="3"] { background: #ffffff; border: 1px solid black; color: #000000;}
-.size-box[data-value="4"] { background: #fc8c03; color: #ffffff;}
+.size-box[data-value="4"] { background: #00bd91; color: #ffffff;}
 .size-box[data-value="5"] { background:#0062ff; color: #ffffff;}
 .size-box[data-value="6"] { background: #d60000; color: #ffffff;}
 .size-box[data-value="7"] { background: #14c400; color: #ffffff;}
@@ -239,18 +150,8 @@ body {
 
 .footer .month {
   position: absolute;
-  top: 4.2vw; /* Position below the 'B' */
+  top: 4.2vw;
   left: 0;
   width: 100%;
   font-size: 3vw;
-}
-
-button {
-  padding: 6px 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border: 1px solid #000;
-  border-radius: 4px;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
 }

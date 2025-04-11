@@ -1,5 +1,6 @@
 let data = [];
 let selectedTicket = null;
+let printstyle = "";
 
 // Initialize global button handlers
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,6 +16,80 @@ fetch('data.json')
     data = json;
     addTicket();
   });
+
+fetch('tickets-print-style.css')
+  .then(response => response.text())
+  .then(css => {
+    printstyle = css;
+
+    const btn = document.getElementById('global-print-tickets-btn');
+    btn.disabled = false;
+
+    btn.addEventListener('click', () => {
+  const VALUE_STYLES = {
+    3: { backgroundColor: '#ffffff', color: '#000000', border: '1px solid black' },
+    4: { backgroundColor: '#fc8c03', color: '#ffffff' },
+    5: { backgroundColor: '#0062ff', color: '#ffffff' },
+    6: { backgroundColor: '#d60000', color: '#ffffff' },
+    7: { backgroundColor: '#14c400', color: '#ffffff' },
+    8: { backgroundColor: '#ffeb0d', color: '#000000' },
+    9: { backgroundColor: '#be0dff', color: '#ffffff' }
+  };
+
+  const original = document.getElementById('ticket-list');
+  const clone = original.cloneNode(true);
+
+  // Apply inline styles only to .size-box elements for color printing
+  clone.querySelectorAll('.size-box').forEach(box => {
+    const val = box.getAttribute('data-value');
+    if (val && VALUE_STYLES[val]) {
+      const styles = VALUE_STYLES[val];
+      Object.entries(styles).forEach(([key, value]) => {
+        box.style[key] = value;
+      });
+      box.style.webkitPrintColorAdjust = 'exact';
+      box.style.printColorAdjust = 'exact';
+    }
+  });
+
+  const printContents = clone.innerHTML;
+
+  const printWindow = window.open('', '', 'width=800,height=600');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Tickets</title>
+        <style>
+          ${printstyle}
+        </style>
+        <style>
+          /* Fallback overrides to enforce color printing */
+          body {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+        </style>
+      </head>
+      <body>${printContents}</body>
+    </html>
+  `);
+
+  printWindow.document.close();
+  printWindow.onload = () => {
+    setTimeout(() => {
+      printWindow.focus();
+      printWindow.print();
+      printWindow.close();
+    }, 100);
+  };
+});
+
+
+  })
+  .catch(err => {
+    console.error('Could not load print stylesheet:', err);
+  });
+
 
 function showLabels() {
   const labelsData = [];
